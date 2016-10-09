@@ -23,17 +23,11 @@ var theBox = document.getElementById("putAnX");
 var width = theBox.clientWidth;
 var height = theBox.clientHeight;
 
-/*
-*   Now, here's where you do your magic. The xPosition and yPosition should not be set to zero.
-*
-*   Use the Math.random() function to get a number between
-*   0 and 1, then use some math to convert that to a number between 0 and the width. This is your x position.
-*
-*   Do the same thing to generate a number between 0 and the height: this is your y position.
-*   */
+// Generate a random number for the x and y positions of the X
+// and round down to the nearest integer generated
+var xPosition = Math.floor(Math.random() * width);
+var yPosition = Math.floor(Math.random() * height); 
 
-var xPosition = Math.random() * width;
-var yPosition = Math.random() * height;
 
 //now we'll get the HTML element where the X goes, fill in the X and set the position of the element.
 var theXElement = document.getElementById("theX");
