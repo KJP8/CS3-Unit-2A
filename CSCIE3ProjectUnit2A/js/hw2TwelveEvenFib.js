@@ -28,14 +28,20 @@ getFibSum.onclick = function(){
   */
 
  function twelveEvenFibonacciSum(){
+    var evenNums = 12;
     var firstNum = 0;
     var secNum = 1;
-    var nextNum;
- 
-    for (var i=2; i<=50; i++){
-        nextNum = secNum;
-        secNum = firstNum + secNum;
-        firstNum = nextNum;
-   }
-  return firstNum;
+    var counter = 0;
+    var sum = 0;
+    
+    while (counter < evenNums - 1) {
+        var nextNum = firstNum + secNum;
+        if (nextNum % 2 == 0) {
+            counter++;
+            sum += nextNum;
+        }
+        firstNum = secNum;
+        secNum = nextNum;
+    }
+    return sum;
 } 
