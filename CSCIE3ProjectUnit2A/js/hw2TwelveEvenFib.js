@@ -18,7 +18,7 @@ var getFibSum = document.getElementById("sumFib");
 
 //then we set the event handler for when the button is clicked
 getFibSum.onclick = function(){
-               document.getElementById("sumFibResult").innerHTML = twelveEvenFibonacciSum();
+    document.getElementById("sumFibResult").innerHTML = twelveEvenFibonacciSum();
  }
 
  /*
@@ -28,12 +28,14 @@ getFibSum.onclick = function(){
   */
 
  function twelveEvenFibonacciSum(){
-               var firstNum = 0;
-               var secNum = 1;
-               var nextNum = firstNum + secNum;
-               for (i=0; i<50; i++) {
-                              firstNum = secNum;
-                              secNum = nextNum;
-                              console.log(nextNum);
-               }               
- } 
+    var firstNum = 0;
+    var secNum = 1;
+    var nextNum;
+ 
+    for (var i=2; i<=50; i++){
+        nextNum = secNum;
+        secNum = firstNum + secNum;
+        firstNum = nextNum;
+   }
+  return firstNum;
+} 
