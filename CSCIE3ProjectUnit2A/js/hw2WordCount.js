@@ -12,18 +12,17 @@
   * Fifth problem: Word Counter
   *
   ********************************************************************/
-// first we'll get the HTMLElement objects for the 
-// textarea and the div where we want to write the
-// output
+// get the HTMLElement objects for the textarea
 var textareaElement = document.getElementById("myWordsToCount");
 
-// now we'll assign a function to the 'onkeyup' handler for the
-// textarea element. This function gets run every time the user
-// completes a keystroke in the textarea.
 textareaElement.onkeyup = function(){
+    // get value of input as a string
     var inputString = textareaElement.value;
+    // replace multple consecutive whitespace instances with a single space
     // credit: http://stackoverflow.com/questions/6163169/replace-multiple-whitespaces-with-single-whitespace-in-javascript-string
     var reduceWhitespace = inputString.replace(/\s+/g, " ");
+    // split input string into separate words
     var words = reduceWhitespace.trim().split(" ");
+    
     document.getElementById("wordcount").innerHTML = words.length;
 }
