@@ -50,7 +50,15 @@
  *
  **/
 function makeBlue(original, output){
-      // YOUR CODE GOES HERE
+    
+    var i = 0;
+    while (i < original.length) {
+        output[i] = 0;
+        output[i + 1] = 0;
+        output[i + 2] = original[i + 2];
+        output[i + 3] = original[i + 3];
+        i += 4;
+    }
 }
 
 /*
@@ -66,7 +74,15 @@ function makeBlue(original, output){
  *
  **/
 function makeReverse(original, output){
-      // YOUR CODE GOES HERE
+    
+    var i = 0;
+    while (i < original.length) {
+        output[i] = 255 - original[i];
+        output[i + 1] = 255 - original[i + 1];
+        output[i + 2] = 255 - original[i + 2];
+        output[i + 3] = original[i + 3];
+        i += 4;
+    }
 }
 
 /*
@@ -82,7 +98,15 @@ function makeReverse(original, output){
  **/
 
 function makeTransparent(original,output){
-      // YOUR CODE GOES HERE
+    
+    var i = 0;
+    while (i < original.length) {
+        output[i] = original[i];
+        output[i + 1] = original[i + 1];
+        output[i + 2] = original[i + 2];
+        output[i + 3] = original[i + 3] / 2;
+        i += 4;
+    }
 }
 
 /*
@@ -102,5 +126,13 @@ function makeTransparent(original,output){
  *
  **/
 function loadComposite(original, secondOne, output){
-       // YOUR CODE GOES HERE
+    
+    var i = 0;       
+    while (i < original.length) {
+        output[i] = original[i] + secondOne[i];
+        output[i + 1] = original[i + 1] + secondOne[i + 1];
+        output[i + 2] = original[i + 2] + secondOne[i + 2];
+        output[i + 3] = original[i + 3] + secondOne[i + 3];
+        i += 4;
+    }
 }
