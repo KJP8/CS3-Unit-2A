@@ -22,7 +22,8 @@ var textareaElement = document.getElementById("myWordsToCount");
 // completes a keystroke in the textarea.
 textareaElement.onkeyup = function(){
     var inputString = textareaElement.value;
+    // credit: http://stackoverflow.com/questions/6163169/replace-multiple-whitespaces-with-single-whitespace-in-javascript-string
     var reduceWhitespace = inputString.replace(/\s+/g, " ");
-    var words = reduceWhitespace.split(" ");
+    var words = reduceWhitespace.trim().split(" ");
     document.getElementById("wordcount").innerHTML = words.length;
 }
